@@ -42,7 +42,7 @@ namespace exercise.wwwapi.Repository
     {
       return _table.ToList();
     }
-    public T GetById(object id)
+    public T? GetById(object id)
     {
       return _table.Find(id);
     }

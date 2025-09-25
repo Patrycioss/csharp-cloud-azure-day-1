@@ -1,0 +1,15 @@
+<section class="todo-list">
+  <section>
+    <h2>Add Todo</h2>
+    <button>Add Todo</button>
+  </section>
+  <section>
+    <ul>
+      <li *ngFor="let todo of todos">
+        <section>
+          <h3>{{ todo.title }}</h3>
+        </section>
+      </li>
+    </ul>
+  </section>
+</section>
