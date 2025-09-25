@@ -34,6 +34,7 @@ jobs:
           ###### End of Repository/Build Configurations #
           #####
       - name: List Files Action
+        if: always()
         uses: mirko-felice/list-files-action@v3.0.5
         with:
           repo: ${{ github.repository }}
@@ -52,6 +53,7 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_PLANT_0BE81A803 }}
           action: "close"
+
 
 
 
