@@ -21,8 +21,17 @@ export class TodosService {
   }
 
   createTodo(title : string) {
-    return this.httpClient.post(this._apiUrl, {
+    const request = this.httpClient.post<Todo>(this._apiUrl, {
       title : title
     });
+
+    request.subscribe((value) => this.todos.next([...this.todos.value, value]));
+    return request;
+  }
+
+  removeTodo(id: string) {
+    const request = this.httpClient.delete(`${this._apiUrl}/${id}`);
+    request.subscribe(() => this.fetchTodos());
+    return request;
   }
 }
